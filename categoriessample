@@ -1,0 +1,208 @@
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+// import 'package:project1/Auth/Desklaptoppage.dart';
+// import 'package:project1/Auth/Homescreen.dart';
+// import 'package:project1/Auth/MenuScreen.dart';
+// import 'package:project1/Auth/Profilepage.dart';
+
+// class Categoriespage extends StatefulWidget {
+//   const Categoriespage({super.key});
+
+//   @override
+//   State<Categoriespage> createState() => _CategoriespageState();
+// }
+
+// class _CategoriespageState extends State<Categoriespage> {
+//   int _currentIndexs = 0;
+
+//   List<String> image1 = [
+//     "assets/laptop1.png",
+//     "assets/mobiles2.png",
+//     "assets/tab3.png",
+//     "assets/speaker4.png",
+//     "assets/group1041.png",
+//     "assets/watch5.png"
+//   ];
+//   List<String> text2 = [
+//     "Desktop & Laptop",
+//     "Mobiles",
+//     "Tablets",
+//     "Electronics",
+//     "Gadgets",
+//     "Smart Technology",
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: SafeArea(
+//         child: Column(children: [
+//           Padding(
+//             padding: const EdgeInsets.all(15),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.start,
+//               children: [
+//                 InkWell(
+//                   onTap: () {
+//                     Navigator.pop(context);
+//                   },
+//                   child: Icon(
+//                     Icons.arrow_back_ios_new,
+//                     color: Colors.black,
+//                     size: 25,
+//                   ),
+//                 ),
+//                 SizedBox(width: 95),
+//                 Center(
+//                   child: Text(
+//                     'Categories',
+//                     style: TextStyle(
+//                         fontSize: 20,
+//                         color: Colors.black,
+//                         fontFamily: 'Poppins'),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//           SizedBox(height: 20),
+//           Container(
+//             height: 500,
+//             width: 300,
+//             child: GridView.builder(
+//               physics: NeverScrollableScrollPhysics(),
+//               shrinkWrap: true,
+//               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                 crossAxisCount: 2, // Number of columns
+//                 crossAxisSpacing: 50,
+//                 mainAxisSpacing: 10,
+//                 childAspectRatio: 1.0, // Aspect ratio of grid items
+//               ),
+//               itemCount: image1.length, // Use dynamic length
+//               itemBuilder: (context, index) {
+//                 return Column(
+//                   children: [
+//                     Container(
+//                       height: 50,
+//                       width: 120,
+//                       child: Center(
+//                         child: Padding(
+//                           padding: const EdgeInsets.symmetric(horizontal: 10),
+//                           child: InkWell(
+//                             child: InkWell(
+//                                 onTap: () {
+//                                   Navigator.push(
+//                                       context,
+//                                       MaterialPageRoute(
+//                                           builder: (context) =>
+//                                               Desklaptoppage()));
+//                                 },
+//                                 child: Image.asset(image1[index])),
+//                           ),
+//                         ),
+//                       ),
+//                     ),
+//                     Text(
+//                       text2[index],
+//                       style: TextStyle(
+//                           fontSize: 10,
+//                           color: Colors.black,
+//                           fontFamily: 'Poppins'),
+//                     ),
+//                   ],
+//                 );
+//               },
+//             ),
+//           )
+//         ]),
+//       ),
+//       bottomNavigationBar: BottomNavyBar(
+//         backgroundColor: Color.fromARGB(255, 0, 74, 134),
+//         showInactiveTitle: true,
+//         selectedIndex: _currentIndexs,
+//         borderRadius: BorderRadius.only(
+//             topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+//         itemCornerRadius: 24,
+//         iconSize: 20,
+//         curve: Curves.easeIn,
+//         onItemSelected: (index) => setState(() => _currentIndexs = index),
+//         items: <BottomNavyBarItem>[
+//           BottomNavyBarItem(
+//             icon: InkWell(
+//               onTap: () {
+//                 Navigator.push(context,
+//                     MaterialPageRoute(builder: (context) => Homescreen()));
+//               },
+//               child: Icon(
+//                 Icons.home,
+//                 color: Colors.white,
+//               ),
+//             ),
+//             title: Text(
+//               ' ',
+//               style: TextStyle(color: Colors.red),
+//             ),
+//             activeColor: Colors.blue,
+//             textAlign: TextAlign.center,
+//           ),
+//           BottomNavyBarItem(
+//             icon: InkWell(
+//               onTap: () {
+//                 Navigator.push(context,
+//                     MaterialPageRoute(builder: (context) => Categoriespage()));
+//               },
+//               child: Icon(
+//                 Icons.view_cozy_rounded,
+//                 color: Colors.white,
+//               ),
+//             ),
+//             title: Text(
+//               ' ',
+//               style: TextStyle(color: Colors.red),
+//             ),
+//             activeColor: Colors.blue,
+//             textAlign: TextAlign.center,
+//           ),
+//           BottomNavyBarItem(
+//             icon: InkWell(
+//               onTap: () {
+//                 Navigator.push(context,
+//                     MaterialPageRoute(builder: (context) => Profilepage()));
+//               },
+//               child: Icon(
+//                 Icons.person,
+//                 color: Colors.white,
+//               ),
+//             ),
+//             title: Text(
+//               ' ',
+//               style: TextStyle(color: Colors.red),
+//             ),
+//             activeColor: Colors.blue,
+//             textAlign: TextAlign.center,
+//           ),
+//           BottomNavyBarItem(
+//             title: Text(
+//               ' ',
+//               style: TextStyle(color: Colors.red),
+//             ),
+//             icon: InkWell(
+//               onTap: () {
+//                 Navigator.push(context,
+//                     MaterialPageRoute(builder: (context) => MenuScreen()));
+//               },
+//               child: Icon(
+//                 Icons.menu,
+//                 color: Colors.white,
+//               ),
+//             ),
+//             activeColor: Colors.blue,
+//             textAlign: TextAlign.center,
+//           ),
+//         ],
+//       ),
+      
+//     );
+//   }
+// }

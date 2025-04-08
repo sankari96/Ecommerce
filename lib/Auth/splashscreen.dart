@@ -1,0 +1,41 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:project1/Auth/Loginscreen.dart';
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    Timer(Duration(seconds: 2), () {Navigator.push(
+  context, 
+  MaterialPageRoute(builder: (context) =>Loginscreen()),
+);
+});
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+      child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image(
+            image: AssetImage("assets/image1.png"),
+            fit: BoxFit.cover,
+            height:  MediaQuery.of(context).size.height/4,
+            width:  MediaQuery.of(context).size.width/2,
+        
+        
+          )),
+    ));
+  }
+}

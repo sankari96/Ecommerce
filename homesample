@@ -1,0 +1,590 @@
+// import 'package:flutter/material.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:flutter/widgets.dart';
+// import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+// import 'package:project1/Auth/Cartscreen.dart';
+// import 'package:project1/Auth/Categoriespage.dart';
+// import 'package:project1/Auth/Desklaptoppage.dart';
+// import 'package:project1/Auth/Electronicsscreen.dart';
+// import 'package:project1/Auth/MenuScreen.dart';
+// import 'package:project1/Auth/Product%20Details.dart';
+// import 'package:project1/Auth/Productlist.dart';
+// import 'package:project1/Auth/Profilepage.dart';
+// import 'package:project1/Auth/Search%20list.dart';
+// import 'package:project1/Auth/gedsetscreen.dart';
+
+// class Homescreen extends StatefulWidget {
+//   const Homescreen({super.key});
+
+//   @override
+//   State<Homescreen> createState() => _HomescreenState();
+// }
+
+// class _HomescreenState extends State<Homescreen> {
+//   int _currentIndex = 0;
+
+//   final TextEditingController _SearchController = TextEditingController();
+//   List<String> image2 = [
+//     "assets/banner.png",
+//     "assets/banner1.jpg",
+//     "assets/banner2.jpg",
+//     "assets/banner3.jpg",
+//     "assets/banner4.jpg",
+//   ];
+//   List<String> image = [
+//     "assets/image15.png",
+//     "assets/mobile.png",
+//     "assets/image16.png",
+//     "assets/image17.png",
+//   ];
+//   List<String> image1 = [
+//     "assets/image11.png",
+//     "assets/image12.png",
+//     "assets/image14.png",
+//     "assets/image13.png",
+//   ];
+
+//   List<String> text = [
+//     "Desktop&Laptop",
+//     "Mobile Phones",
+//     "Electronics",
+//     "Gadgets",
+//   ];
+//   List<String> text1 = [
+//     "Galaxy M33 (4 GB | 64 GB)",
+//     "Redmi M53 (4 GB | 64 GB)",
+//     "Oppo M33 (4 GB| 64 GB)",
+//     "lenova M53 (4GB | 64 GB )"
+//   ];
+//   List<String> text2 = [
+//     "AED 42900",
+//     "AED 42900",
+//     "AED 42900",
+//     "AED 42900",
+//   ];
+//   List<String> text3 = [
+//     "AED74999",
+//     "AED74999",
+//     "AED74999",
+//     "AED74999",
+//   ];
+//   List<String> text4 = [
+//     "10% off",
+//     "15% off",
+//     "10% off",
+//     "15% off",
+//   ];
+//   int _currentIndexs = 0;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: SingleChildScrollView(
+//         child: SafeArea(
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               Row(
+//                 mainAxisAlignment: MainAxisAlignment.start,
+//                 children: [
+//                   SizedBox(width:  MediaQuery.of(context).size.width/100,
+                    
+//                   ),
+//                   Column(
+//                     children: [
+//                       Text(
+//                         '      Welcome back!',
+//                         style: TextStyle(
+//                           fontSize: 13,
+//                           color: Colors.black,
+//                           fontFamily: 'Poppins',
+//                         ),
+//                       ),
+//                       Text(
+//                         'Lorem ipsum',
+//                         style: TextStyle(
+//                           fontSize: 13,
+//                           color: Colors.black,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                   Spacer(),
+//                   InkWell(
+//                     onTap: () {
+//                       Navigator.push(
+//                           context,
+//                           MaterialPageRoute(
+//                               builder: (context) => Cartscreen()));
+//                     },
+//                     child: Icon(
+//                       Icons.shopping_cart_outlined, // Handle cart press
+//                       color: Colors.black,
+//                       size: 25,
+//                     ),
+//                   ),
+//                   SizedBox(),
+//                 ],
+//               ),
+//               Padding(
+//                 padding: const EdgeInsets.all(10),
+//                 child: Container(
+//                   height: 50,
+//                   width: 360,
+//                   decoration: BoxDecoration(
+//                       borderRadius: BorderRadius.circular(30),
+//                       color: Color.fromARGB(255, 0, 74, 134)),
+//                   child: TextFormField(
+//                       controller: _SearchController,
+//                       onTap: () {
+//                         Navigator.push(
+//                             context,
+//                             MaterialPageRoute(
+//                                 builder: (context) => Searchlist()));
+//                       },
+//                       decoration: InputDecoration(
+//                           contentPadding: EdgeInsets.only(top: 10),
+//                           prefixIcon: Padding(
+//                             padding: const EdgeInsets.symmetric(vertical: 8),
+//                             child: Icon(
+//                               Icons.search,
+//                               color: Colors.white,
+//                               size: 40,
+//                             ),
+//                           ),
+//                           hintText: "What are looking for...",
+//                           enabledBorder: InputBorder.none,
+//                           hintStyle:
+//                               TextStyle(fontSize: 13, color: Colors.white),
+//                           border: InputBorder.none),
+//                       validator: (value) {}),
+//                 ),
+//               ),
+//               CarouselSlider(
+//                 items: image2
+//                     .map((item) => Container(
+//                           margin: EdgeInsets.all(1.0),
+//                           decoration: BoxDecoration(
+//                             borderRadius: BorderRadius.circular(10.0),
+//                             image: DecorationImage(
+//                               image: AssetImage(item),
+//                               fit: BoxFit.cover,
+//                             ),
+//                           ),
+//                         ))
+//                     .toList(),
+//                 options: CarouselOptions(
+//                   height: 100.0,
+//                   enlargeCenterPage: true,
+//                   autoPlay: true,
+//                   aspectRatio: 40 / 10,
+//                   onPageChanged: (index, reason) {
+//                     setState(() {
+//                       _currentIndex = index;
+//                     });
+//                   },
+//                 ),
+//               ),
+//               SizedBox(height: 10),
+//               Row(
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 children: image1.asMap().entries.map((entry) {
+//                   return GestureDetector(
+//                     onTap: () => setState(() => _currentIndex = entry.key),
+//                     child: Container(
+//                       width: 8.0,
+//                       height: 8.0,
+//                       margin:
+//                           EdgeInsets.symmetric(vertical: 6.0, horizontal: 2.0),
+//                       decoration: BoxDecoration(
+//                           shape: BoxShape.circle,
+//                           color: _currentIndex == entry.key
+//                               ? const Color.fromARGB(255, 0, 56, 102)
+//                               : Colors.grey),
+//                     ),
+//                   );
+//                 }).toList(),
+//               ),
+//               Row(
+//                 children: [
+//                   Padding(
+//                     padding: const EdgeInsets.all(12),
+//                     child: Text(
+//                       'Categories',
+//                       style: TextStyle(
+//                           fontSize: 13,
+//                           color: Colors.blue,
+//                           fontFamily: 'Poppins'),
+//                     ),
+//                   ),
+//                   SizedBox(
+//                     width: 226,
+//                   ),
+//                   Text(
+//                     'View all',
+//                     style: TextStyle(fontSize: 13, color: Colors.blue),
+//                   ),
+//                 ],
+//               ),
+//               SingleChildScrollView(
+//                 scrollDirection: Axis.horizontal,
+//                 child: Row(
+//                   children: [
+//                     InkWell(
+//                       onTap: () {
+//                         Navigator.push(
+//                             context,
+//                             MaterialPageRoute(
+//                                 builder: (context) => Desklaptoppage()));
+//                       },
+//                       child: Padding(
+//                         padding: const EdgeInsets.all(10),
+//                         child: Container(
+//                           width: 90,
+//                           height: 70,
+//                           child: Column(
+//                             children: [
+//                               Container(
+//                                 height: 40,
+//                                 width: 50,
+//                                 child: Image.asset("assets/image15.png"),
+//                                 decoration: BoxDecoration(
+//                                     borderRadius: BorderRadius.circular(10),
+//                                     color: Colors.white10),
+//                               ),
+//                               Text(
+//                                 'Desktop&Laptop',
+//                                 style: TextStyle(
+//                                     fontSize: 10,
+//                                     color: Colors.black,
+//                                     fontFamily: 'Poppins'),
+//                               ),
+//                             ],
+//                           ),
+//                         ),
+//                       ),
+//                     ),
+//                     Padding(
+//                       padding: const EdgeInsets.all(10),
+//                       child: Container(
+//                         width: 90,
+//                         height: 70,
+//                         child: Column(
+//                           children: [
+//                             Container(
+//                               height: 40,
+//                               width: 50,
+//                               child: InkWell(
+//                                   onTap: () {
+//                                     Navigator.push(
+//                                         context,
+//                                         MaterialPageRoute(
+//                                             builder: (context) =>
+//                                                 Searchlist()));
+//                                   },
+//                                   child: Image.asset("assets/mobile.png")),
+//                               decoration: BoxDecoration(
+//                                   borderRadius: BorderRadius.circular(10),
+//                                   color: Colors.white10),
+//                             ),
+//                             Text(
+//                               'Mobile Phone',
+//                               style: TextStyle(
+//                                   fontSize: 10,
+//                                   color: Colors.black,
+//                                   fontFamily: 'Poppins'),
+//                             ),
+//                           ],
+//                         ),
+//                       ),
+//                     ),
+//                     Padding(
+//                       padding: const EdgeInsets.all(10),
+//                       child: Container(
+//                         width: 90,
+//                         height: 70,
+//                         child: Column(
+//                           children: [
+//                             Container(
+//                               height: 40,
+//                               width: 50,
+//                               child: InkWell(
+//                                   onTap: () {
+//                                     Navigator.push(
+//                                         context,
+//                                         MaterialPageRoute(
+//                                             builder: (context) =>
+//                                                 Electronicsscreen()));
+//                                   },
+//                                   child: Image.asset("assets/image16.png")),
+//                               decoration: BoxDecoration(
+//                                   borderRadius: BorderRadius.circular(10),
+//                                   color: Colors.white10),
+//                             ),
+//                             Text(
+//                               "Electronics",
+//                               style: TextStyle(
+//                                   fontSize: 10,
+//                                   color: Colors.black,
+//                                   fontFamily: 'Poppins'),
+//                             ),
+//                           ],
+//                         ),
+//                       ),
+//                     ),
+//                     Padding(
+//                       padding: const EdgeInsets.all(10),
+//                       child: Container(
+//                         width: 90,
+//                         height: 70,
+//                         child: Column(
+//                           children: [
+//                             Container(
+//                               height: 40,
+//                               width: 50,
+//                               child: Image.asset("assets/image17.png"),
+//                               decoration: BoxDecoration(
+//                                   borderRadius: BorderRadius.circular(10),
+//                                   color: Colors.white10),
+//                             ),
+//                             InkWell(
+//                               onTap: () {
+//                                 Navigator.push(
+//                                     context,
+//                                     MaterialPageRoute(
+//                                         builder: (context) => Gedsetscreen()));
+//                               },
+//                               child: Text(
+//                                 'Gadgets',
+//                                 style: TextStyle(
+//                                     fontSize: 10,
+//                                     color: Colors.black,
+//                                     fontFamily: 'Poppins'),
+//                               ),
+//                             ),
+//                           ],
+//                         ),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               Row(
+//                 children: [
+//                   Padding(
+//                     padding: EdgeInsets.all(10),
+//                     child: Text(
+//                       'Latest Mobiles',
+//                       style: TextStyle(
+//                           fontSize: 13,
+//                           color: Colors.blue,
+//                           fontFamily: 'Poppins'),
+//                     ),
+//                   ),
+//                   SizedBox(
+//                     width: 206,
+//                   ),
+//                   InkWell(
+//                     onTap: () {
+//                       Navigator.push(
+//                           context,
+//                           MaterialPageRoute(
+//                               builder: (context) => Desklaptoppage()));
+//                     },
+//                     child: Text('View all',
+//                         style: TextStyle(
+//                           fontSize: 13,
+//                           color: Colors.blue,
+//                         )),
+//                   ),
+//                 ],
+//               ),
+//               SizedBox(
+//                 height: 350,
+//                 width: 380,
+//                 child: GridView.builder(
+//                     physics: NeverScrollableScrollPhysics(),
+//                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                       crossAxisCount: 2, //Number of columns
+//                       crossAxisSpacing: 50, mainAxisSpacing: 10,
+//                       childAspectRatio: 1.0, //Aspect ratio of grid items
+//                     ),
+//                     itemCount: 4, //Total items
+//                     itemBuilder: (context, index) {
+//                       return Padding(
+//                         padding: const EdgeInsets.all(5),
+//                         child: InkWell(
+//                           onTap: () {
+//                             Navigator.push(
+//                                 context,
+//                                 MaterialPageRoute(
+//                                     builder: (context) => ProductDetails(
+//                                           image: image1[index].toString(),
+//                                           mobilemodel: text1[index].toString(),
+//                                           mobilename: text2[index].toString(),
+//                                           mobileprice: text3[index].toString(),
+//                                         )));
+//                           },
+//                           child: Container(
+//                             height: 50,
+//                             width: 150,
+//                             child: Column(
+//                               children: [
+//                                 Container(
+//                                     height: 80,
+//                                     width: 150,
+//                                     child:
+//                                         Image.asset(image1[index].toString())),
+//                                 Text(
+//                                   text1[index].toString(),
+//                                   style: TextStyle(
+//                                       fontSize: 10,
+//                                       color: Colors.black,
+//                                       fontFamily: 'Poppins'),
+//                                 ),
+//                                 Row(
+//                                   mainAxisAlignment: MainAxisAlignment.start,
+//                                   children: [
+//                                     SizedBox(
+//                                       width: 8,
+//                                     ),
+//                                     Text(
+//                                       textAlign: TextAlign.center,
+//                                       text2[index].toString(),
+//                                       style: TextStyle(
+//                                           fontSize: 10,
+//                                           color: Colors.black,
+//                                           fontFamily: 'Poppins'),
+//                                     ),
+//                                     SizedBox(
+//                                       width: 8,
+//                                     ),
+//                                     Text(
+//                                       text3[index].toString(),
+//                                       style: TextStyle(
+//                                           decoration:
+//                                               TextDecoration.lineThrough,
+//                                           decorationColor: Colors.red,
+//                                           fontSize: 10,
+//                                           color: Colors.red,
+//                                           fontFamily: 'Poppins'),
+//                                     ),
+//                                   ],
+//                                 ),
+//                                 Row(
+//                                   children: [
+//                                     SizedBox(
+//                                       width: 10,
+//                                       height: 40,
+//                                     ),
+//                                     Text(
+//                                       text4[index].toString(),
+//                                       style: TextStyle(
+//                                         fontSize: 10,
+//                                         color: Colors.black,
+//                                       ),
+//                                     ),
+//                                   ],
+//                                 ),
+//                               ],
+//                             ),
+//                             decoration: BoxDecoration(
+//                                 borderRadius: BorderRadius.circular(20),
+//                                 color: Colors.white30),
+//                           ),
+//                         ),
+//                       );
+//                     }),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//       bottomNavigationBar: BottomNavyBar(
+//         backgroundColor: Color.fromARGB(255, 0, 74, 134),
+//         showInactiveTitle: true,
+//         selectedIndex: _currentIndexs,
+//         borderRadius: BorderRadius.only(
+//             topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+//         itemCornerRadius: 24,
+//         iconSize: 20,
+//         curve: Curves.easeIn,
+//         onItemSelected: (index) => setState(() => _currentIndexs = index),
+//         items: <BottomNavyBarItem>[
+//           BottomNavyBarItem(
+//             icon: InkWell(
+//               onTap: () {
+//                 Navigator.push(context,
+//                     MaterialPageRoute(builder: (context) => Homescreen()));
+//               },
+//               child: Icon(
+//                 Icons.home,
+//                 color: Colors.white,
+//               ),
+//             ),
+//             title: Text(
+//               ' ',
+//               style: TextStyle(color: Colors.red),
+//             ),
+//             activeColor: Colors.blue,
+//             textAlign: TextAlign.center,
+//           ),
+//           BottomNavyBarItem(
+//             icon: InkWell(
+//               onTap: () {
+//                 Navigator.push(context,
+//                     MaterialPageRoute(builder: (context) => Categoriespage()));
+//               },
+//               child: Icon(
+//                 Icons.view_cozy_rounded,
+//                 color: Colors.white,
+//               ),
+//             ),
+//             title: Text(
+//               ' ',
+//               style: TextStyle(color: Colors.red),
+//             ),
+//             activeColor: Colors.blue,
+//             textAlign: TextAlign.center,
+//           ),
+//           BottomNavyBarItem(
+//             icon: InkWell(
+//               onTap: () {
+//                 Navigator.push(context,
+//                     MaterialPageRoute(builder: (context) => Profilepage()));
+//               },
+//               child: Icon(
+//                 Icons.person,
+//                 color: Colors.white,
+//               ),
+//             ),
+//             title: Text(
+//               ' ',
+//               style: TextStyle(color: Colors.red),
+//             ),
+//             activeColor: Colors.blue,
+//             textAlign: TextAlign.center,
+//           ),
+//           BottomNavyBarItem(
+//             title: Text(
+//               ' ',
+//               style: TextStyle(color: Colors.red),
+//             ),
+//             icon: InkWell(
+//               onTap: () {
+//                 Navigator.push(context,
+//                     MaterialPageRoute(builder: (context) => MenuScreen()));
+//               },
+//               child: Icon(
+//                 Icons.menu,
+//                 color: Colors.white,
+//               ),
+//             ),
+//             activeColor: Colors.blue,
+//             textAlign: TextAlign.center,
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

@@ -1,0 +1,241 @@
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+
+// class Orderdetails extends StatefulWidget {
+//   const Orderdetails({super.key});
+
+//   @override
+//   State<Orderdetails> createState() => _OrderdetailsState();
+// }
+
+// class _OrderdetailsState extends State<Orderdetails> {
+//   @override
+//   Widget build(BuildContext context) {
+//     final screenWidth = MediaQuery.of(context).size.width;
+//     final screenHeight = MediaQuery.of(context).size.height;
+
+//     return Scaffold(
+//       body: SafeArea(
+//         child: SingleChildScrollView(
+//           child: Padding(
+//             padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
+//             child: Column(
+//               children: [
+//                 SizedBox(height: screenHeight * 0.02),
+//                 Row(
+//                   children: [
+//                     InkWell(
+//                       onTap: () {
+//                         Navigator.pop(context);
+//                       },
+//                       child: Icon(
+//                         Icons.arrow_back_ios_new,
+//                         color: Colors.black,
+//                         size: screenWidth * 0.06,
+//                       ),
+//                     ),
+//                     SizedBox(width: screenWidth * 0.2),
+//                     Text(
+//                       'Order Details',
+//                       style: TextStyle(
+//                         fontSize: screenWidth * 0.05,
+//                         color: Colors.black,
+//                         fontFamily: 'Poppins',
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//                 SizedBox(height: screenHeight * 0.02),
+//                 Row(
+//                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                   children: [
+//                     Text(
+//                       'Order ID : 123AS201',
+//                       style: TextStyle(
+//                         fontSize: screenWidth * 0.035,
+//                         color: Colors.black,
+//                         fontFamily: 'Poppins',
+//                       ),
+//                     ),
+//                     Text(
+//                       'Delivered',
+//                       style: TextStyle(
+//                         fontSize: screenWidth * 0.035,
+//                         color: Colors.green,
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//                 Align(
+//                   alignment: Alignment.centerLeft,
+//                   child: Text(
+//                     'Tue, 10 Oct 2023',
+//                     style: TextStyle(
+//                       fontSize: screenWidth * 0.032,
+//                       color: Colors.black54,
+//                       fontFamily: 'Poppins',
+//                     ),
+//                   ),
+//                 ),
+//                 SizedBox(height: screenHeight * 0.03),
+//                 _buildProductCard(
+//                   imagePath: "assets/samsung copy.png",
+//                   title: "Samsung Galaxy S22 Ultra",
+//                   subTitle: "5G",
+//                   description: "( Phantom White,12GB-256GB )",
+//                   price: "AED 42900",
+//                   oldPrice: "AED74999",
+//                   screenWidth: screenWidth,
+//                   imageWidthRatio: 0.3,
+//                 ),
+//                 _buildProductCard(
+//                   imagePath: "assets/gp2.png",
+//                   title: "Galaxy M33",
+//                   subTitle: "(4GB | 64 GB )",
+//                   description: "",
+//                   price: "AED 42900",
+//                   oldPrice: "AED74999",
+//                   screenWidth: screenWidth,
+//                   imageWidthRatio: 0.35,
+//                 ),
+//                 _buildDetailRow('Cart Details'),
+//                 _buildPriceRow('Cart Total', 'AED 42,900.000', screenWidth),
+//                 _buildPriceRow('Discount', 'AED 8,900.000', screenWidth),
+//                 _buildPriceRow('VAT', 'AED 1,900.000', screenWidth),
+//                 _buildPriceRow('Other Charges', 'AED 1,900.000', screenWidth),
+//                 _buildPriceRow('Total Price', 'AED 42,900.000', screenWidth,
+//                     color: const Color.fromARGB(255, 1, 108, 197)),
+//                 SizedBox(height: screenHeight * 0.02),
+//                 _buildDetailRow('Delivered Address'),
+//                 SizedBox(height: screenHeight * 0.01),
+//                 Container(
+//                   width: double.infinity,
+//                   padding: EdgeInsets.all(screenWidth * 0.04),
+//                   decoration: BoxDecoration(
+//                     color: Colors.grey[100],
+//                     borderRadius: BorderRadius.circular(8),
+//                   ),
+//                   child: Column(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: const [
+//                       Text("David", style: TextStyle(fontSize: 12)),
+//                       Text("+919876543210", style: TextStyle(fontSize: 12)),
+//                       SizedBox(height: 10),
+//                       Text("112/B 2nd Floor,", style: TextStyle(fontSize: 12)),
+//                       Text("Northstreet,", style: TextStyle(fontSize: 12)),
+//                       Text("chettikulam,Nagercoil-03", style: TextStyle(fontSize: 12)),
+//                       Text("kanyakumari", style: TextStyle(fontSize: 12)),
+//                     ],
+//                   ),
+//                 ),
+//                 SizedBox(height: screenHeight * 0.02),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+
+//   Widget _buildProductCard({
+//     required String imagePath,
+//     required String title,
+//     required String subTitle,
+//     required String description,
+//     required String price,
+//     required String oldPrice,
+//     required double screenWidth,
+//     required double imageWidthRatio,
+//   }) {
+//     return Container(
+//       margin: const EdgeInsets.symmetric(vertical: 8),
+//       padding: const EdgeInsets.all(8),
+//       decoration: BoxDecoration(
+//         color: Colors.white12,
+//         borderRadius: BorderRadius.circular(10),
+//       ),
+//       child: Row(
+//         children: [
+//           Container(
+//             width: screenWidth * imageWidthRatio,
+//             height: screenWidth * 0.3,
+//             decoration: BoxDecoration(
+//               borderRadius: BorderRadius.circular(10),
+//             ),
+//             child: Image.asset(imagePath),
+//           ),
+//           SizedBox(width: screenWidth * 0.03),
+//           Expanded(
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(title,
+//                     style: TextStyle(fontSize: 12, fontFamily: 'Poppins')),
+//                 if (subTitle.isNotEmpty)
+//                   Text(subTitle,
+//                       style: TextStyle(fontSize: 12, fontFamily: 'Poppins')),
+//                 if (description.isNotEmpty)
+//                   Text(description,
+//                       style: TextStyle(
+//                           fontSize: 10,
+//                           color: Colors.black54,
+//                           fontFamily: 'Poppins')),
+//                 const SizedBox(height: 8),
+//                 Row(
+//                   children: [
+//                     Text(price,
+//                         style: const TextStyle(
+//                             fontSize: 11,
+//                             color: Colors.black,
+//                             fontFamily: 'Poppins')),
+//                     const SizedBox(width: 5),
+//                     Text(oldPrice,
+//                         style: const TextStyle(
+//                           fontSize: 8,
+//                           decoration: TextDecoration.lineThrough,
+//                           color: Colors.red,
+//                           fontFamily: 'Poppins',
+//                         )),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+
+//   Widget _buildDetailRow(String title) {
+//     return Padding(
+//       padding: const EdgeInsets.only(top: 16.0, bottom: 8),
+//       child: Align(
+//         alignment: Alignment.centerLeft,
+//         child: Text(
+//           title,
+//           style:
+//               const TextStyle(fontSize: 15, fontFamily: 'Poppins', color: Colors.black),
+//         ),
+//       ),
+//     );
+//   }
+
+//   Widget _buildPriceRow(String label, String value, double screenWidth,
+//       {Color color = Colors.black}) {
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(vertical: 4.0),
+//       child: Row(
+//         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//         children: [
+//           Text(label,
+//               style:
+//                   const TextStyle(fontSize: 15, fontFamily: 'Poppins', color: Colors.black)),
+//           Text(value,
+//               style: TextStyle(
+//                   fontSize: 15, fontFamily: 'Poppins', color: color)),
+//         ],
+//       ),
+//     );
+//   }
+// }
+

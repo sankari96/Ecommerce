@@ -1,0 +1,125 @@
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// import 'package:project1/Auth/Productlist.dart';
+
+// class Desklaptoppage extends StatefulWidget {
+//   const Desklaptoppage({super.key});
+
+//   @override
+//   State<Desklaptoppage> createState() => _DesklaptoppageState();
+// }
+
+// class _DesklaptoppageState extends State<Desklaptoppage> {
+//   int _currentIndex = 0;
+
+//   List<String> image = [
+//     "assets/Lenovo.png",
+//     "assets/hpimage.png",
+//     "assets/tabimage.png",
+//     "assets/Dell.png",
+//     "assets/asusimage.png",
+//     "assets/appleimage.png",
+//     "assets/Samsung.png",
+//     "assets/All in one pc.png",
+//   ];
+
+//   List<String> text = [
+//     "Lenovo",
+//     "HP",
+//     "Tablets",
+//     "Dell",
+//     "Asus",
+//     "Apple",
+//     "Samsung",
+//     "All in One PC",
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: SafeArea(
+//         child: SingleChildScrollView(
+//           child: Column(
+//             children: [
+//               Padding(
+//                 padding: const EdgeInsets.all(15),
+//                 child: Row(
+//                   mainAxisAlignment: MainAxisAlignment.start,
+//                   children: [
+//                     InkWell(
+//                       onTap: () {
+//                         Navigator.pop(context);
+//                       },
+//                       child: const Icon(
+//                         Icons.arrow_back_ios_new,
+//                         color: Colors.black,
+//                         size: 25,
+//                       ),
+//                     ),
+//                     SizedBox(width: 70),
+//                     Text(
+//                       'Desktop & Laptop',
+//                       style: TextStyle(
+//                         fontSize: 20,
+//                         color: Colors.black,
+//                         fontFamily: 'Poppins',
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               SizedBox(height: 20),
+//               Container(
+//                 height: 500,
+//                 width: 300,
+//                 child: GridView.builder(
+//                   physics: NeverScrollableScrollPhysics(),
+//                   shrinkWrap: true,
+//                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                     crossAxisCount: 2, // Number of columns
+//                     crossAxisSpacing: 90,
+//                     mainAxisSpacing: 10,
+//                     childAspectRatio: 1.0, // Aspect ratio of grid items
+//                   ),
+//                   itemCount: image.length, // Use dynamic length
+//                   itemBuilder: (context, index) {
+//                     return Column(
+//                       children: [
+//                         Container(
+//                           height: 50,
+//                           width: 120,
+//                           child: Center(
+//                             child: Padding(
+//                               padding:
+//                                   const EdgeInsets.symmetric(horizontal: 10),
+//                               child: InkWell(
+//                                   onTap: () {
+//                                     Navigator.push(
+//                                         context,
+//                                         MaterialPageRoute(
+//                                             builder: (context) =>
+//                                                 Productlist()));
+//                                   },
+//                                   child: Image.asset(image[index])),
+//                             ),
+//                           ),
+//                         ),
+//                         Text(
+//                           text[index],
+//                           style: TextStyle(
+//                               fontSize: 10,
+//                               color: Colors.black,
+//                               fontFamily: 'Poppins'),
+//                         ),
+//                       ],
+//                     );
+//                   },
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

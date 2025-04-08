@@ -1,0 +1,198 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class Editprofile extends StatefulWidget {
+  const Editprofile({super.key});
+
+  @override
+  State<Editprofile> createState() => _EditprofileState();
+}
+
+class _EditprofileState extends State<Editprofile> {
+  final _formkey = GlobalKey<FormState>();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _mobilephoneController = TextEditingController();
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+          child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Icon(
+                    Icons.arrow_back_ios_new,
+                    color: Colors.black,
+                    size: 25,
+                  ),
+                ),
+                const SizedBox(width: 100),
+                const Text(
+                  ' Edit Profile',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                    fontFamily: 'Poppins',
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(130),
+                  child: Container(
+                    width: 70,
+                    height: 70,
+                    color: const Color.fromARGB(255, 0, 74, 134),
+                    child: const Center(
+                      child: Text(
+                        "L",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.normal,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                right: 1,
+                bottom: 1,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(130),
+                  child: Container(
+                    width: 30,
+                    height: 30,
+                    color: Colors.white,
+                    child: const Center(
+                      child: Icon(
+                        Icons.camera_enhance,
+                        color: Colors.black,
+                        size: 20,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),SizedBox(height: 20,),
+          Row(
+          children: [
+            SizedBox(
+              height: 15,
+              width: 15,
+            ),
+            Text(
+              'Name',
+              style: TextStyle(fontSize: 20, color: Colors.black),
+            ),
+          ],
+        ),
+          Padding(
+          padding: EdgeInsets.all(5),
+          child: Form(
+            key: _formkey,
+            child: Column(children: [
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                  controller: _nameController,
+                  keyboardType: TextInputType.name,
+                  decoration: InputDecoration(suffix: Text('Update',style: TextStyle(fontSize: 10,color: const Color.fromARGB(255, 0, 81, 147),fontFamily: "Poppies"),),
+                      border: OutlineInputBorder(), labelText: "Name"),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your name';
+                    }
+                    return null;
+                  },
+                ),
+
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    height: 15,
+                    width: 8,
+                  ),
+                  Text(
+                    'Email',
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                  controller: _emailController,
+                  decoration: InputDecoration(suffix: Text('Update',style: TextStyle(fontSize: 10,color: const Color.fromARGB(255, 0, 81, 147),fontFamily: "Poppies"),),
+                      border: OutlineInputBorder(), labelText: "Email"),
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please enter your email";
+                    } else if (!RegExp(
+                            r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+                        .hasMatch(value)) {
+                      return "Please enter a valid email";
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    height: 15,
+                    width: 8,
+                  ),
+                  Text(
+                    'Mobilephone',
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                  controller: _mobilephoneController,
+                  decoration: InputDecoration(suffix: Text('Update',style: TextStyle(fontSize: 10,color: const Color.fromARGB(255, 0, 81, 147),fontFamily: "Poppies"),),
+                      border: OutlineInputBorder(), labelText: "Mobilephone"),
+                  keyboardType: TextInputType.phone,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your phone number';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+
+          
+
+        ],
+
+      ),),
+    )])));
+  }
+}

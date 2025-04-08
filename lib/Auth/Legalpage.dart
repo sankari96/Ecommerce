@@ -1,0 +1,272 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:project1/Auth/Aboutusscreen.dart';
+import 'package:project1/Auth/Privacyscreen.dart';
+import 'package:project1/Auth/Returnscreen.dart';
+import 'package:project1/Auth/Termscreen.dart';
+
+class Legalpage extends StatefulWidget {
+  const Legalpage({super.key});
+
+  @override
+  State<Legalpage> createState() => _LegalpageState();
+}
+
+class _LegalpageState extends State<Legalpage> {
+  int _currentIndexs = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back_ios_new,
+                      color: Colors.black,
+                      size: 25,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 90,
+                  ),
+                  Text(
+                    'Legal Polices',
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        fontFamily: 'Poppins'),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Row(children: [
+                Icon(
+                  Icons.error_outline,
+                  color: Colors.black,
+                  size: 18,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Aboutusscreen()));
+                  },
+                  child: Text("About Us",
+                      style: TextStyle(
+                        color: Color.fromARGB(231, 0, 0, 0),
+                        fontSize: 17,
+                        fontFamily: 'Poppins',
+                      )),
+                ),
+                Spacer(),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Aboutusscreen()));
+                  },
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color.fromARGB(231, 0, 0, 0),
+                    size: 18,
+                  ),
+                ),
+              ]),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Row(children: [
+                Container(
+                  height: 17,
+                  width: 17,
+                  child: Image(
+                    image: AssetImage("assets/Icon.png"),
+                    color: Colors.black,
+                  ),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(5)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Privacyscreen()));
+                  },
+                  child: Text("Privacy Policy",
+                      style: TextStyle(
+                        color: Color.fromARGB(231, 0, 0, 0),
+                        fontSize: 17,
+                        fontFamily: 'Poppins',
+                      )),
+                ),
+                Spacer(),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Privacyscreen()));
+                  },
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.black,
+                    size: 18,
+                  ),
+                ),
+              ]),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40),
+              child: Row(children: [
+                Container(
+                  height: 17,
+                  width: 17,
+                  child: Image(
+                    image: AssetImage("assets/Icon1.png"),
+                    color: Colors.black,
+                  ),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(5)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Termscreen()));
+                  },
+                  child: Text("Terms & Condition",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                        fontFamily: 'Poppins',
+                      )),
+                ),
+                Spacer(),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Termscreen()));
+                  },
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color.fromARGB(231, 0, 0, 0),
+                    size: 18,
+                  ),
+                ),
+              ]),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Row(children: [
+                Container(
+                  height: 17,
+                  width: 17,
+                  child: Image(
+                    image: AssetImage("assets/Keyboard.png"),
+                    color: Colors.black,
+                  ),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(5)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Returnscreen()));
+                  },
+                  child: Text("Return & Refund Policy",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                        fontFamily: 'Poppins',
+                      )),
+                ),
+                Spacer(),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Returnscreen()));
+                  },
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color.fromARGB(231, 0, 0, 0),
+                    size: 18,
+                  ),
+                ),
+              ]),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavyBar(
+        backgroundColor: Color.fromARGB(255, 0, 74, 134),
+        showInactiveTitle: true,
+        selectedIndex: _currentIndexs,
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+        itemCornerRadius: 24,
+        iconSize: 20,
+        curve: Curves.easeIn,
+        onItemSelected: (index) => setState(() => _currentIndexs = index),
+        items: [
+          BottomNavyBarItem(
+            icon: Icon(Icons.home, color: Colors.white),
+            title: Text(' ', style: TextStyle(color: Colors.red)),
+            activeColor: Colors.blue,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.view_cozy_rounded, color: Colors.white),
+            title: Text(' ', style: TextStyle(color: Colors.red)),
+            activeColor: Colors.blue,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.person, color: Colors.white),
+            title: Text(' ', style: TextStyle(color: Colors.red)),
+            activeColor: Colors.blue,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.menu, color: Colors.white),
+            title: Text(' ', style: TextStyle(color: Colors.red)),
+            activeColor: Colors.blue,
+          ),
+        ],
+      ),
+    );
+  }
+}

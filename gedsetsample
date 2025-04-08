@@ -1,0 +1,92 @@
+// import 'package:flutter/material.dart';
+
+// class Gedsetscreen extends StatefulWidget {
+//   const Gedsetscreen({super.key});
+
+//   @override
+//   State<Gedsetscreen> createState() => _GedsetscreenState();
+// }
+
+// class _GedsetscreenState extends State<Gedsetscreen> {
+//   int _currentIndex = 0;
+
+//   List<String> image = [
+//     "assets/Gedimage.png",
+//     "assets/Gedimage1.png",
+//     "assets/Gedimage2.png",
+//     "assets/Gedimage3.png",
+//     "assets/Gedimage4.png",
+//     "assets/Gedimage5.png",
+//     "assets/Gedimage6.png",
+//     "assets/Gedimage7.png",
+//   ];
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: SingleChildScrollView(
+//         child: SafeArea(
+//             child: Column(children: [
+//           Padding(
+//             padding: const EdgeInsets.all(15),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.start,
+//               children: [
+//                 InkWell(
+//                   onTap: () {
+//                     Navigator.pop(context);
+//                   },
+//                   child: const Icon(
+//                     Icons.arrow_back_ios_new,
+//                     color: Colors.black,
+//                     size: 25,
+//                   ),
+//                 ),
+//                 SizedBox(width: 80),
+//                 Text(
+//                   'Gedgets Items',
+//                   style: TextStyle(
+//                     fontSize: 20,
+//                     color: Colors.black,
+//                     fontFamily: 'Poppins',
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//           SizedBox(height: 20),
+//           Container(
+//             height: 500,
+//             width: 300,
+//             child: GridView.builder(
+//               physics: NeverScrollableScrollPhysics(),
+//               shrinkWrap: true,
+//               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                 crossAxisCount: 2, // Number of columns
+//                 crossAxisSpacing: 90,
+//                 mainAxisSpacing: 10,
+//                 childAspectRatio: 1.0, // Aspect ratio of grid items
+//               ),
+//               itemCount: image.length, // Use dynamic length
+//               itemBuilder: (context, index) {
+//                 return Column(
+//                   children: [
+//                     Container(
+//                       height: 90,
+//                       width: 120,
+//                       child: Center(
+//                         child: Padding(
+//                           padding: const EdgeInsets.symmetric(horizontal: 15),
+//                           child: Image.asset(image[index]),
+//                         ),
+//                       ),
+//                     ),
+//                   ],
+//                 );
+//               },
+//             ),
+//           ),
+//         ])),
+//       ),
+//     );
+//   }
+// }
