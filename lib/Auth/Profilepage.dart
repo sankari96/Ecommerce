@@ -41,6 +41,7 @@ class _ProfilepageState extends State<Profilepage> {
                     size: 25,
                   ),
                 ),
+                
                 const SizedBox(width: 120),
                 const Text(
                   'Profile',
