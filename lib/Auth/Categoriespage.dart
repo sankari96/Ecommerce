@@ -4,7 +4,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:project1/Auth/Desklaptoppage.dart';
 import 'package:project1/Auth/Homescreen.dart';
 import 'package:project1/Auth/MenuScreen.dart';
-import 'package:project1/Auth/Profilepage.dart';
+import 'package:project1/Auth/Profilepage.dart'; 
 
 class Categoriespage extends StatefulWidget {
   const Categoriespage({super.key});
