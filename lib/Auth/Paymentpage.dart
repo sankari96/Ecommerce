@@ -1,6 +1,7 @@
 import 'package:debit_credit_card_widget/debit_credit_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:project1/Auth/Yourorder.dart';
+import 'package:easy_stepper/easy_stepper.dart';
 
 class Paymentpage extends StatefulWidget {
   Paymentpage({super.key});
@@ -20,6 +21,7 @@ class _PaymentpageState extends State<Paymentpage> {
   bool useBackgroundImage = false;
   bool useFloatingAnimation = true;
   int values = 1;
+  int activeStep = 0;
   bool creditcardslow = false;
   bool creditcard = false;
 
@@ -58,40 +60,86 @@ class _PaymentpageState extends State<Paymentpage> {
                   ],
                 ),
                 SizedBox(height: screenHeight * 0.02),
-                Container(
-                  height: screenHeight * 0.13,
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
-                  decoration: BoxDecoration(
-                    color: Colors.white12,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        children: [
-                          SizedBox(height: screenHeight * 0.02),
-                          Image.asset("assets/box.png", height: 30),
-                        ],
+                EasyStepper(
+                  activeStep: activeStep,
+                  stepShape: StepShape.rRectangle,
+                  stepBorderRadius: 15,
+                  borderThickness: 2,
+                  padding: EdgeInsets.all(12),
+                  stepRadius: 30,
+                  finishedStepBorderColor: Colors.deepOrange,
+                  finishedStepTextColor: Colors.deepOrange,
+                  finishedStepBackgroundColor: Colors.deepOrange,
+                  activeStepIconColor: Colors.deepOrange,
+                  showLoadingAnimation: false,
+                  steps: [
+                    EasyStep(
+                      customStep: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Opacity(
+                          opacity: activeStep >= 0 ? 1 : 0.3,
+                          child: Image.asset(
+                            'assets/box.png',
+                            color: Color.fromARGB(255, 0, 60, 110),
+                            height: 24,
+                          ),
+                        ),
                       ),
-                      Column(
-                        children: [
-                          SizedBox(height: screenHeight * 0.02),
-                          Image.asset("assets/tick.png",
-                              height: 24, color: Color(0xFF003C6E)),
-                        ],
+                      customTitle: Text(
+                        'Address',
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 0, 60, 110),
+                            fontFamily: 'Poppins'),
+                        textAlign: TextAlign.center,
                       ),
-                      Column(
-                        children: [
-                          SizedBox(height: screenHeight * 0.02),
-                          Image.asset("assets/card-tick.png",
-                              height: 24, color: Color(0xFF003C6E)),
-                        ],
+                    ),
+                    EasyStep(
+                      customStep: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Opacity(
+                          opacity: activeStep >= 1 ? 1 : 0.3,
+                          child: Image.asset(
+                            'assets/tick.png',
+                            color: Color.fromARGB(255, 0, 60, 110),
+                            height: 24,
+                          ),
+                        ),
                       ),
-                    ],
-                  ),
+                      customTitle: Text(
+                        'Summary',
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 0, 60, 110),
+                            fontFamily: 'Poppins'),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    EasyStep(
+                      customStep: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Opacity(
+                          opacity: activeStep >= 2 ? 1 : 0.3,
+                          child: Image.asset(
+                            'assets/card-tick.png',
+                            color: Color.fromARGB(255, 0, 60, 110),
+                            height: 24,
+                          ),
+                        ),
+                      ),
+                      customTitle: Text(
+                        'Payment',
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 0, 60, 110),
+                            fontFamily: 'Poppins'),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                  onStepReached: (index) => setState(() => activeStep = index),
                 ),
+
                 SizedBox(height: screenHeight * 0.015),
 
                 /// Credit Card Option

@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project1/Auth/Addressbook.dart';
 import 'package:project1/Auth/Paymentpage.dart';
+import 'package:easy_stepper/easy_stepper.dart';
+
 
 class Summarypage extends StatefulWidget {
   const Summarypage({super.key});
@@ -10,6 +13,7 @@ class Summarypage extends StatefulWidget {
 }
 
 class _SummarypageState extends State<Summarypage> {
+    int activeStep = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,93 +45,87 @@ class _SummarypageState extends State<Summarypage> {
                   ),
                 ],
               ),
-            ),Container(
-              height: 100,
-              width: 330,
-              color: Colors.white12,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: Row(
-                  children: [
-                    Column(children: [
-                      SizedBox(
-                        height: 20,
+            ),
+            EasyStepper(
+                  activeStep: activeStep,
+                  stepShape: StepShape.rRectangle,
+                  stepBorderRadius: 15,
+                  borderThickness: 2,
+                  padding: EdgeInsets.all(12),
+                  stepRadius: 30,
+                  finishedStepBorderColor: Colors.deepOrange,
+                  finishedStepTextColor: Colors.deepOrange,
+                  finishedStepBackgroundColor: Colors.deepOrange,
+                  activeStepIconColor: Colors.deepOrange,
+                  showLoadingAnimation: false,
+                  steps: [
+                    EasyStep(
+                      customStep: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Opacity(
+                          opacity: activeStep >= 0 ? 1 : 0.3,
+                          child: Image.asset(
+                            'assets/box.png',
+                            color: Color.fromARGB(255, 0, 60, 110),
+                            height: 24,
+                          ),
+                        ),
                       ),
-                      Container(
-                        child: Image(image: AssetImage("assets/box.png")),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10)),
-                      ),
-                      Text(
+                      customTitle: Text(
                         'Address',
                         style: TextStyle(
                             fontSize: 15,
                             color: Color.fromARGB(255, 0, 60, 110),
                             fontFamily: 'Poppins'),
-                      ),
-                    ]),
-                    Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: Container(child: Text(
-                          '-----',
-                          style: TextStyle(
-                              fontSize: 15,
-                              color: Color.fromARGB(255, 0, 60, 110),
-                              fontFamily: 'Poppins'),
-                        ),),
-                    ),
-                    Container(
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Image(
-                            image: AssetImage(
-                              "assets/tick.png",
-                            ),
-                            height: 24,
-                          ),
-                          Text(
-                            'Summary',
-                            style: TextStyle(
-                                fontSize: 15,
-                                color: Color.fromARGB(255, 0, 60, 110),
-                                fontFamily: 'Poppins'),
-                          ),
-                        ],
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                    SizedBox(
-                      width: 50,
-                    ),
-                    Container(
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Image(
-                            image: AssetImage(
-                              "assets/card-tick.png",
-                            ),
+                    EasyStep(
+                      customStep: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Opacity(
+                          opacity: activeStep >= 1 ? 1 : 0.3,
+                          child: Image.asset(
+                            'assets/tick.png',
+                            color: Color.fromARGB(255, 0, 60, 110),
                             height: 24,
                           ),
-                          Text(
-                            'Payment',
-                            style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.grey,
-                                fontFamily: 'Poppins'),
+                        ),
+                      ),
+                      customTitle: Text(
+                        'Summary',
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 0, 60, 110),
+                            fontFamily: 'Poppins'),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    EasyStep(
+                      customStep: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Opacity(
+                          opacity: activeStep >= 2 ? 1 : 0.3,
+                          child: Image.asset(
+                            'assets/card-tick.png',
+                            color: Color.fromARGB(255, 0, 60, 110),
+                            height: 24,
                           ),
-                        ],
+                        ),
+                      ),
+                      customTitle: Text(
+                        'Payment',
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 0, 60, 110),
+                            fontFamily: 'Poppins'),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ],
+                  onStepReached: (index) => setState(() => activeStep = index),
                 ),
-              ),
-            ),
+
             Container(
             height: 145,
             width: 380,
@@ -528,10 +526,17 @@ class _SummarypageState extends State<Summarypage> {
                   style: TextStyle(
                       fontSize: 18, fontFamily: 'Poppins', color: Colors.black),
                 ),SizedBox(width: 120,),
-                Text(
-                  'Change',
-                  style: TextStyle(
-                      fontSize: 15, color: Color.fromARGB(255, 1, 86, 156)),
+                InkWell(onTap: () {
+                                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Addressbook()));
+                                      
+                                    },
+
+                  child: Text(
+                    'Change',
+                    style: TextStyle(
+                        fontSize: 15, color: Color.fromARGB(255, 1, 86, 156)),
+                  ),
                 ),
               ],
             ),

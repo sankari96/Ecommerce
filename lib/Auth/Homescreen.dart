@@ -12,6 +12,7 @@ import 'package:project1/Auth/Productlist.dart';
 import 'package:project1/Auth/Profilepage.dart';
 import 'package:project1/Auth/Search%20list.dart';
 import 'package:project1/Auth/gedsetscreen.dart';
+import 'package:sizer/sizer.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -64,7 +65,7 @@ class _HomescreenState extends State<Homescreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: screenHeight * 0.01),
+                SizedBox(height:2.8.h),
                 Row(
                   children: [
                     Column(

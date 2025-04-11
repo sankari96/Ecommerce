@@ -147,9 +147,8 @@ class _ProfilepageState extends State<Profilepage> {
                       fontFamily: 'Poppins',
                     )),
               ),
-              SizedBox(
-                width: 173,
-              ),
+              Spacer(),
+              
               InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -186,9 +185,7 @@ class _ProfilepageState extends State<Profilepage> {
                       fontFamily: 'Poppins',
                     )),
               ),
-              SizedBox(
-                width: 145,
-              ),
+             Spacer(),
               InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -226,9 +223,7 @@ class _ProfilepageState extends State<Profilepage> {
                       fontFamily: 'Poppins',
                     )),
               ),
-              SizedBox(
-                width: 153,
-              ),
+              Spacer(),
               InkWell(onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Myorder()));
@@ -264,9 +259,7 @@ class _ProfilepageState extends State<Profilepage> {
                       fontFamily: 'Poppins',
                     )),
               ),
-              SizedBox(
-                width: 105,
-              ),
+              Spacer(),
               InkWell(onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Changepassword()));
@@ -302,9 +295,7 @@ class _ProfilepageState extends State<Profilepage> {
                       fontFamily: 'Poppins',
                     )),
               ),
-              SizedBox(
-                width: 205,
-              ),
+             Spacer(),
               InkWell(onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Legalpage()));

@@ -1,12 +1,11 @@
-import 'dart:ffi';
-
+ 
 import 'package:flutter/material.dart';
 import 'package:project1/Auth/Forgetpassword.dart';
 import 'package:project1/Auth/Homescreen.dart';
 import 'package:project1/Auth/Otpscreen.dart';
 import 'package:project1/Auth/Registerscreen.dart';
 
-class Loginscreen extends StatefulWidget {
+class Loginscreen extends StatefulWidget { 
   const Loginscreen({super.key});
 
   @override
