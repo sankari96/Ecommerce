@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:project1/Auth/Cartscreen.dart';
 
@@ -49,8 +48,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Cartscreen()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Cartscreen()));
                       },
                       child: const Icon(
                         Icons.shopping_cart_outlined,
@@ -187,11 +188,11 @@ class _ProductDetailsState extends State<ProductDetails> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Cartscreen()),
+                            MaterialPageRoute(
+                                builder: (context) => Cartscreen()),
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
@@ -213,11 +214,13 @@ class _ProductDetailsState extends State<ProductDetails> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Cartscreen()),
+                            MaterialPageRoute(
+                                builder: (context) => Cartscreen()),
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(255, 0, 38, 104),
+                          backgroundColor:
+                              const Color.fromARGB(255, 0, 38, 104),
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
@@ -268,4 +271,3 @@ class _ProductDetailsState extends State<ProductDetails> {
     );
   }
 }
-

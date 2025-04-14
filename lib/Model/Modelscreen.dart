@@ -23,6 +23,18 @@ class Welcome {
     String? logo;
     String? ceoName;
 
+  var category;
+
+  var description;
+
+  var price;
+
+  var title;
+
+  var image;
+
+  var rating;
+
     Welcome({
         this.id,
         this.name,

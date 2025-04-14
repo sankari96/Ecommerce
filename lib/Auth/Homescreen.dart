@@ -36,6 +36,7 @@ class _HomescreenState extends State<Homescreen> {
   ];
 
   List<String> image1 = [
+
     "assets/image11.png",
     "assets/image12.png",
     "assets/image14.png",
@@ -48,6 +49,7 @@ class _HomescreenState extends State<Homescreen> {
     "Oppo M33 (4 GB| 64 GB)",
     "Lenovo M53 (4GB | 64 GB )"
   ];
+
   List<String> text2 = ["AED 42900", "AED 42900", "AED 42900", "AED 42900"];
   List<String> text3 = ["AED74999", "AED74999", "AED74999", "AED74999"];
   List<String> text4 = ["10% off", "15% off", "10% off", "15% off"];
@@ -63,9 +65,9 @@ class _HomescreenState extends State<Homescreen> {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height:2.8.h),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+            SizedBox(height:1.0.h),
                 Row(
                   children: [
                     Column(
@@ -93,7 +95,7 @@ class _HomescreenState extends State<Homescreen> {
                 ),
                 SizedBox(height: screenHeight * 0.015),
                 Container(
-                  height: 50,
+                  height: 6.h,
                   width: screenWidth,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
@@ -145,8 +147,8 @@ class _HomescreenState extends State<Homescreen> {
                     return GestureDetector(
                       onTap: () => setState(() => _currentIndex = entry.key),
                       child: Container(
-                        width: 8.0,
-                        height: 8.0,
+                        width: 1.h,
+                        height: 1.h,
                         margin: const EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 4.0),
                         decoration: BoxDecoration(
@@ -220,6 +222,7 @@ class _HomescreenState extends State<Homescreen> {
           setState(() => _currentIndexs = index);
           switch (index) {
             case 0:
+
               Navigator.push(context,
                   MaterialPageRoute(builder: (_) => const Homescreen()));
               break;
@@ -273,22 +276,22 @@ class _HomescreenState extends State<Homescreen> {
       onTap: onTap,
       child: Container(
         margin: const EdgeInsets.all(8),
-        width: 90,
-        height: 70,
+        width: 10.h,
+        height: 9.h,
         child: Column(
           children: [
             Container(
-              height: 40,
-              width: 50,
+              height: 5.h,
+              width: 9.h,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white10),
               child: Image.asset(image),
             ),
-            const SizedBox(height: 5),
+             SizedBox(height: 1.h),
             Text(label,
                 style: const TextStyle(
-                    fontSize: 10, color: Colors.black, fontFamily: 'Poppins'))
+                    fontSize: 9, color: Colors.black, fontFamily: 'Poppins'))
           ],
         ),
       ),
@@ -316,7 +319,7 @@ class _HomescreenState extends State<Homescreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(image1[index], height: height * 0.12),
-            const SizedBox(height: 5),
+             SizedBox(height:0.09.h),
             Text(text1[index],
                 style: const TextStyle(fontSize: 10, fontFamily: 'Poppins')),
             Row(
