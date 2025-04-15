@@ -4,7 +4,7 @@ import 'package:project1/Auth/Forgetpassword.dart';
 import 'package:project1/Auth/Homescreen.dart';
 import 'package:project1/Auth/Otpscreen.dart';
 import 'package:project1/Auth/Registerscreen.dart';
-import 'package:project1/Model/Lginmodel.dart';
+
 
 class Loginscreen extends StatefulWidget { 
   const Loginscreen({super.key});
@@ -26,17 +26,11 @@ class _LoginscreenState extends State<Loginscreen> {
           SizedBox(
             height: MediaQuery.of(context).size.height/10,
           ),
-          InkWell(
-             onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) =>ProductView ()));
-                },
-            child: Image(
-              image: AssetImage("assets/image1.png"),
-              fit: BoxFit.cover,
-              height:  MediaQuery.of(context).size.height/5,
-              width:  MediaQuery.of(context).size.width/3,
-            ),
+          Image(
+            image: AssetImage("assets/image1.png"),
+            fit: BoxFit.cover,
+            height:  MediaQuery.of(context).size.height/5,
+            width:  MediaQuery.of(context).size.width/3,
           ),
           Text(
             'Login',

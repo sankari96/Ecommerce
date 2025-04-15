@@ -41,7 +41,11 @@ class _CategoriespageState extends State<Categoriespage> {
 
     return Scaffold(
       body: SafeArea(
-        child: Column(
+        child: 
+        
+        
+        
+        Column(
           children: [
             Padding(
               padding: EdgeInsets.all(screenWidth * 0.04),

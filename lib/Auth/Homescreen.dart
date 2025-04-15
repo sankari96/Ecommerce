@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:get/get.dart';
 import 'package:project1/Auth/Cartscreen.dart';
 import 'package:project1/Auth/Categoriespage.dart';
 import 'package:project1/Auth/Desklaptoppage.dart';
@@ -12,6 +13,7 @@ import 'package:project1/Auth/Productlist.dart';
 import 'package:project1/Auth/Profilepage.dart';
 import 'package:project1/Auth/Search%20list.dart';
 import 'package:project1/Auth/gedsetscreen.dart';
+import 'package:project1/Model/Modelhomeview.dart';
 import 'package:sizer/sizer.dart';
 
 class Homescreen extends StatefulWidget {
@@ -64,9 +66,11 @@ class _HomescreenState extends State<Homescreen> {
         child: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
-            child: Column(
+            child:
+             Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+             
             SizedBox(height:1.0.h),
                 Row(
                   children: [
@@ -244,7 +248,11 @@ class _HomescreenState extends State<Homescreen> {
           BottomNavyBarItem(icon: Icon(Icons.home, color: Colors.white), title: Text(''), activeColor: Colors.blue),
           BottomNavyBarItem(icon: Icon(Icons.view_cozy_rounded, color: Colors.white), title: Text(''), activeColor: Colors.blue),
           BottomNavyBarItem(icon: Icon(Icons.person, color: Colors.white), title: Text(''), activeColor: Colors.blue),
-          BottomNavyBarItem(icon: Icon(Icons.menu, color: Colors.white), title: Text(''), activeColor: Colors.blue),
+          BottomNavyBarItem(icon: InkWell(onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => EmptyView()));
+                      },
+            child: Icon(Icons.menu, color: Colors.white)), title: Text(''), activeColor: Colors.blue),
         ],
       ),
     );
@@ -299,7 +307,10 @@ class _HomescreenState extends State<Homescreen> {
   }
 
   Widget buildProductCard(BuildContext context, int index, double width, double height) {
-    return InkWell(
+
+    return 
+    
+     InkWell(
       onTap: () {
         Navigator.push(
             context,

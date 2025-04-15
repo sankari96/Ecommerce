@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project1/Auth/Product%20Details.dart';
+import 'package:project1/Model/ModelViewsearch.dart';
+import 'package:project1/Model/Seachlistcontrolls.dart';
 
 class Searchlist extends StatefulWidget {
   const Searchlist({super.key});
@@ -135,9 +137,17 @@ class _SearchlistState extends State<Searchlist> {
                             Container(
                               height: screenHeight * 0.15,
                               width: double.infinity,
-                              child: Image.asset(
-                                image1[index],
-                                fit: BoxFit.contain,
+                              child: InkWell(
+                                 onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) =>TodoView ()));
+                },
+
+
+                                child: Image.asset(
+                                  image1[index],
+                                  fit: BoxFit.contain,
+                                ),
                               ),
                             ),
                             SizedBox(height: screenHeight * 0.01),
